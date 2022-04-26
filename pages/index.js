@@ -1,4 +1,4 @@
-import { HeroBanner } from '../components';
+import { HeroBanner, Product, FooterBanner } from '../components';
 import styles from '../styles/home.module.scss';
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
       <div className={products__container}>
         {['product 1', 'product 2'].map((product) => product)}
       </div>
-      Footer
+      <FooterBanner />
     </>
   );
 };
