@@ -1,8 +1,10 @@
+import styles from '../styles/home.module.scss';
+
 const Home = () => {
   return (
     <>
       Hero Banner Component
-      <div>
+      <div className={styles.home__productsHeading}>
         <h2>Best Selling Products</h2>
         <p>Speakers of many variations</p>
       </div>

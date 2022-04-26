@@ -1,0 +1,20 @@
+$color-heading: #324d67;
+
+.home {
+
+    &__productsHeading {
+        text-align: center;
+        margin: 40px 0px;
+        color: $color-heading;
+
+        h2 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 200;
+        }
+    }
+}
