@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { client } from '../lib/client';
 import { HeroBanner, Product, FooterBanner } from '../components';
 import styles from '../styles/home.module.scss';
 
-const Home = () => {
+const Home = ({ products, bannerData }) => {
   const { products__heading, products__container } = styles;
   return (
     <>
@@ -13,11 +14,26 @@ const Home = () => {
         <p>Speakers of many variations</p>
       </div>
       <div className={products__container}>
-        {['product 1', 'product 2'].map((product) => product)}
+        {products?.map((product) => product.name)}
       </div>
       <FooterBanner />
     </>
   );
+};
+
+export const getServerSideProps = async () => {
+  const productQuery = `*[_type == "product"]`;
+  const products = await client.fetch(productQuery);
+
+  const bannerQuery = `*[_type == "banner"]`;
+  const bannerData = await client.fetch(bannerQuery);
+
+  return {
+    props: {
+      products,
+      bannerData,
+    },
+  };
 };
 
 export default Home;
