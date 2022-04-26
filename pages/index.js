@@ -6,9 +6,10 @@ import styles from '../styles/home.module.scss';
 
 const Home = ({ products, bannerData }) => {
   const { products__heading, products__container } = styles;
+
   return (
     <>
-      <HeroBanner />
+      <HeroBanner bannerInfo={bannerData.length && bannerData[0]} />
       <div className={products__heading}>
         <h2>Best Selling Products</h2>
         <p>Speakers of many variations</p>
