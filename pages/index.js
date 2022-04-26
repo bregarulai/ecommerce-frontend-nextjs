@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { HeroBanner, Product, FooterBanner } from '../components';
 import styles from '../styles/home.module.scss';
 
