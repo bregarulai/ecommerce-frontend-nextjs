@@ -5,7 +5,7 @@ import { urlFor } from '../../lib/client';
 import styles from './product.module.scss';
 
 const Product = ({ product }) => {
-  const { name, image, price, details, slug } = product;
+  const { name, image, price, slug } = product;
   const { card, imageContainer, nameText, priceText } = styles;
   return (
     <div>
