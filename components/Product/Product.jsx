@@ -5,9 +5,8 @@ import { urlFor } from '../../lib/client';
 import styles from './product.module.scss';
 
 const Product = ({ product }) => {
-  console.log(product);
   const { name, image, price, details, slug } = product;
-  const { card, imageContainer } = styles;
+  const { card, imageContainer, nameText, priceText } = styles;
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
@@ -19,6 +18,8 @@ const Product = ({ product }) => {
             height={250}
             className={imageContainer}
           />
+          <p className={nameText}>{name}</p>
+          <p className={priceText}>${price}</p>
         </div>
       </Link>
     </div>
