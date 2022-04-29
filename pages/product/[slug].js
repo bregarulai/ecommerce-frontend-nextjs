@@ -1,17 +1,86 @@
 import React from 'react';
+import {
+  AiOutlineMinus,
+  AiOutlinePlus,
+  AiFillStar,
+  AiOutlineStar,
+} from 'react-icons/ai';
 
 import { urlFor, client } from '../../lib/client';
 import styles from '../../styles/product.module.scss';
 
 const ProductDetails = ({ products, product }) => {
   const { image, name, details, price } = product;
-  const { container, imageContainer } = styles;
+  const {
+    container,
+    imageContainer,
+    corrauselContainer,
+    description,
+    reviews,
+    priceText,
+    quantity,
+    quantityDesc,
+    minus,
+    num,
+    plus,
+    buttons,
+    addToCartBtn,
+    buyNowBtn,
+  } = styles;
   return (
     <div>
       <div className={container}>
         <div>
           <div className={imageContainer}>
             <img src={urlFor(image && image[0])} alt={name} />
+          </div>
+          {/* <div className={corrauselContainer}>
+            {image?.map((item, index) => (
+              <img
+                key={index}
+                src={urlFor(item)}
+                className=''
+                onMouseEnter=''
+              />
+            ))}
+          </div> */}
+        </div>
+        <div className={description}>
+          <h1>{name}</h1>
+          <div className={reviews}>
+            <div>
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
+              <AiOutlineStar />
+              <AiOutlineStar />
+            </div>
+            <p>(20)</p>
+          </div>
+          <h4>Details: </h4>
+          <p>{details}</p>
+          <p className={priceText}>${price}</p>
+          <div className={quantity}>
+            <h3>Quantity:</h3>
+            <p className={quantityDesc}>
+              <span className={minus} onClick=''>
+                <AiOutlineMinus />
+              </span>
+              <span className={num} onClick=''>
+                0
+              </span>
+              <span className={plus} onClick=''>
+                <AiOutlinePlus />
+              </span>
+            </p>
+          </div>
+          <div className={buttons}>
+            <button type='button' className={addToCartBtn} onClick=''>
+              Add to Cart
+            </button>
+            <button type='button' className={buyNowBtn} onClick=''>
+              Buy Now
+            </button>
           </div>
         </div>
       </div>
