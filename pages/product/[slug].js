@@ -14,6 +14,7 @@ const ProductDetails = ({ products, product }) => {
   const {
     container,
     imageContainer,
+    productImage,
     corrauselContainer,
     description,
     reviews,
@@ -32,7 +33,11 @@ const ProductDetails = ({ products, product }) => {
       <div className={container}>
         <div>
           <div className={imageContainer}>
-            <img src={urlFor(image && image[0])} alt={name} />
+            <img
+              src={urlFor(image && image[0])}
+              alt={name}
+              className={productImage}
+            />
           </div>
           {/* <div className={corrauselContainer}>
             {image?.map((item, index) => (

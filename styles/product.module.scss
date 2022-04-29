@@ -3,6 +3,7 @@ $textColorSecondary: #f02d34;
 $colorGray: gray;
 $colorGreen: rgb(49, 168, 49);
 $colorWhite: white;
+$imageBg: #ebebeb;
 
 .container {
     display: flex;
@@ -10,9 +11,31 @@ $colorWhite: white;
     margin: 40px;
     margin-top: 60px;
     color: $textColor;
+
+    @media screen and (max-width:800px) {
+        flex-wrap: wrap;
+    }
 }
 
 .imageContainer {}
+
+.productImage {
+    border-radius: 15px;
+    background-color: $imageBg;
+    width: 400px;
+    height: 400px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+
+    &:hover {
+        background-color: $textColorSecondary;
+    }
+
+    @media screen and (max-width:800px) {
+        width: 350px;
+        height: 350px;
+    }
+}
 
 .corrauselContainer {
     display: flex;
@@ -104,6 +127,10 @@ $colorWhite: white;
     &:hover {
         transform: scale(1.1, 1.1)
     }
+
+    @media screen and (max-width:800px) {
+        width: 150px;
+    }
 }
 
 .buyNowBtn {
@@ -122,5 +149,9 @@ $colorWhite: white;
 
     &:hover {
         transform: scale(1.1, 1.1);
+    }
+
+    @media screen and (max-width:800px) {
+        width: 150px;
     }
 }
