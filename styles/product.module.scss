@@ -203,4 +203,9 @@ $imageBg: #ebebeb;
     &:hover {
         animation-play-state: paused;
     }
+
+    @media screen and (max-width:800px) {
+        animation: marquee 10s linear infinite;
+        width: 550%;
+    }
 }
