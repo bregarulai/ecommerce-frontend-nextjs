@@ -155,3 +155,52 @@ $imageBg: #ebebeb;
         width: 150px;
     }
 }
+
+.mayLikeWrapper {
+    margin-top: 120px;
+
+    h2 {
+        text-align: center;
+        margin: 50px;
+        color: $textColor;
+        font-size: 28px;
+    }
+}
+
+.marquee {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.maryLikeContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 15s linear infinite;
+    width: 180%;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}

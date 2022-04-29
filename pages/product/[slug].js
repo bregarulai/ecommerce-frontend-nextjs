@@ -5,6 +5,7 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from 'react-icons/ai';
+import { Product } from '../../components';
 
 import { urlFor, client } from '../../lib/client';
 import styles from '../../styles/product.module.scss';
@@ -27,6 +28,10 @@ const ProductDetails = ({ products, product }) => {
     buttons,
     addToCartBtn,
     buyNowBtn,
+    mayLikeWrapper,
+    marquee,
+    maryLikeContainer,
+    track,
   } = styles;
   return (
     <div>
@@ -86,6 +91,16 @@ const ProductDetails = ({ products, product }) => {
             <button type='button' className={buyNowBtn} onClick=''>
               Buy Now
             </button>
+          </div>
+        </div>
+      </div>
+      <div className={mayLikeWrapper}>
+        <h2>You may also like</h2>
+        <div className={marquee}>
+          <div className={`${maryLikeContainer} ${track}`}>
+            {products.map((item) => (
+              <Product key={item._id} product={item} />
+            ))}
           </div>
         </div>
       </div>
