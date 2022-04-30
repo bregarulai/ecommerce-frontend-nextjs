@@ -17,8 +17,6 @@ $imageBg: #ebebeb;
     }
 }
 
-.imageContainer {}
-
 .productImage {
     border-radius: 15px;
     background-color: $imageBg;
@@ -41,6 +39,18 @@ $imageBg: #ebebeb;
     display: flex;
     gap: 10px;
     margin-top: 20px;
+}
+
+.smallImage {
+    border-radius: 8px;
+    background-color: $imageBg;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.selectedImage {
+    background-color: $textColorSecondary;
 }
 
 .description {

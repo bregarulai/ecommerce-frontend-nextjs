@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AiOutlineMinus,
   AiOutlinePlus,
@@ -14,7 +14,6 @@ const ProductDetails = ({ products, product }) => {
   const { image, name, details, price } = product;
   const {
     container,
-    imageContainer,
     productImage,
     corrauselContainer,
     description,
@@ -32,28 +31,35 @@ const ProductDetails = ({ products, product }) => {
     marquee,
     maryLikeContainer,
     track,
+    smallImage,
+    selectedImage,
   } = styles;
+  const [index, setIndex] = useState(0);
   return (
     <div>
       <div className={container}>
         <div>
-          <div className={imageContainer}>
+          <div>
             <img
-              src={urlFor(image && image[0])}
+              src={urlFor(image && image[index])}
               alt={name}
               className={productImage}
             />
           </div>
-          {/* <div className={corrauselContainer}>
-            {image?.map((item, index) => (
-              <img
-                key={index}
-                src={urlFor(item)}
-                className=''
-                onMouseEnter=''
-              />
-            ))}
-          </div> */}
+          {
+            <div className={corrauselContainer}>
+              {image?.map((item, i) => (
+                <img
+                  key={i}
+                  src={urlFor(item)}
+                  className={
+                    i === index ? `${smallImage} ${selectedImage}` : smallImage
+                  }
+                  onMouseEnter={() => setIndex(i)}
+                />
+              ))}
+            </div>
+          }
         </div>
         <div className={description}>
           <h1>{name}</h1>
