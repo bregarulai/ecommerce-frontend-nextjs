@@ -1,9 +1,44 @@
-.wrapper {}
+$primary-color: #f02d34;
+$bg-color: white;
 
-.container {}
+.wrapper {
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    /* will-change: transform; */
+    transition: all 1s ease-in-out;
+}
 
-.cartHeading {}
+.container {
+    height: 100vh;
+    width: 600px;
+    background-color: $bg-color;
+    float: right;
+    padding: 40px 10px;
+    position: relative;
+}
 
-.heading {}
+.cartHeading {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    gap: 2px;
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+}
 
-.numItems {}
+.heading {
+    margin-left: 10px;
+
+}
+
+.numItems {
+    margin-left: 10px;
+    color: $primary-color;
+}
