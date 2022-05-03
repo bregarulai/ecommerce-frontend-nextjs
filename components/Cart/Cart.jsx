@@ -14,11 +14,25 @@ import { urlFor } from '../../lib/client';
 import styles from './cart.module.scss';
 
 const Cart = () => {
-  const {} = styles;
+  const { wrapper, container, cartHeading, heading, numItems } = styles;
   const cartRef = useRef();
-  const { totalPrice, totoalQuantities, cartItems, setShowCart } =
+  const { totalPrice, totalQuatities, cartItems, setShowCart } =
     useAppContext();
-  return <div>Cart</div>;
+  return (
+    <div className={wrapper} ref={cartRef}>
+      <div className={container}>
+        <button
+          type='button'
+          className={cartHeading}
+          onClick={() => setShowCart(false)}
+        >
+          <AiOutlineLeft />
+          <span className={heading}>Your Cart</span>
+          <span className={numItems}>({totalQuatities} items)</span>
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default Cart;
