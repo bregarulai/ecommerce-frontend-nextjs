@@ -14,8 +14,18 @@ import { urlFor } from '../../lib/client';
 import styles from './cart.module.scss';
 
 const Cart = () => {
-  const { wrapper, container, cartHeading, heading, numItems, cartEmpty, btn } =
-    styles;
+  const {
+    wrapper,
+    container,
+    cartHeading,
+    heading,
+    numItems,
+    cartEmpty,
+    btn,
+    productContainer,
+    product,
+    productImg,
+  } = styles;
   const cartRef = useRef();
   const { totalPrice, totalQuatities, cartItems, setShowCart } =
     useAppContext();
@@ -46,6 +56,19 @@ const Cart = () => {
             </Link>
           </div>
         )}
+
+        <div className={productContainer}>
+          {cartItems.length >= 1 &&
+            cartItems.map((item, index) => (
+              <div key={item._id} className={product}>
+                <img
+                  src={urlFor(item?.image[0])}
+                  alt={item.name}
+                  className={productImg}
+                />
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
