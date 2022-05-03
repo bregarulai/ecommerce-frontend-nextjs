@@ -7,6 +7,7 @@ import {
 } from 'react-icons/ai';
 import { Product } from '../../components';
 
+import { useAppContext } from '../../context/appContext';
 import { urlFor, client } from '../../lib/client';
 import styles from '../../styles/product.module.scss';
 

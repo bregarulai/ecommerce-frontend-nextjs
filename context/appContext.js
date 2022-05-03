@@ -42,3 +42,5 @@ export const AppContext = ({ children }) => {
     </Context.Provider>
   );
 };
+
+export const useAppContext = () => useContext(Context);
