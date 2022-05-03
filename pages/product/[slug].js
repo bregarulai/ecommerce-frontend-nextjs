@@ -36,6 +36,7 @@ const ProductDetails = ({ products, product }) => {
     selectedImage,
   } = styles;
   const [index, setIndex] = useState(0);
+  const { decreaseQuantity, increaseQuantity, qty } = useAppContext();
   return (
     <div>
       <div className={container}>
@@ -80,13 +81,13 @@ const ProductDetails = ({ products, product }) => {
           <div className={quantity}>
             <h3>Quantity:</h3>
             <p className={quantityDesc}>
-              <span className={minus} onClick=''>
+              <span className={minus} onClick={decreaseQuantity}>
                 <AiOutlineMinus />
               </span>
               <span className={num} onClick=''>
-                0
+                {qty}
               </span>
-              <span className={plus} onClick=''>
+              <span className={plus} onClick={increaseQuantity}>
                 <AiOutlinePlus />
               </span>
             </p>

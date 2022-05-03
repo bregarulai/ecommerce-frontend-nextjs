@@ -1,7 +1,7 @@
-import React, { CreateContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 
-const Context = CreateContext();
+const Context = createContext();
 
 export const AppContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
