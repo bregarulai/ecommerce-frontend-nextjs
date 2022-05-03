@@ -14,7 +14,8 @@ import { urlFor } from '../../lib/client';
 import styles from './cart.module.scss';
 
 const Cart = () => {
-  const { wrapper, container, cartHeading, heading, numItems } = styles;
+  const { wrapper, container, cartHeading, heading, numItems, cartEmpty, btn } =
+    styles;
   const cartRef = useRef();
   const { totalPrice, totalQuatities, cartItems, setShowCart } =
     useAppContext();
@@ -30,6 +31,21 @@ const Cart = () => {
           <span className={heading}>Your Cart</span>
           <span className={numItems}>({totalQuatities} items)</span>
         </button>
+        {cartItems.length < 1 && (
+          <div className={cartEmpty}>
+            <AiOutlineShopping size={150} />
+            <h3>Your shopping bag is empty</h3>
+            <Link href='/'>
+              <button
+                type='button'
+                onClick={() => setShowCart(false)}
+                className={btn}
+              >
+                Continue Shopping
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
