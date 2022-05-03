@@ -2,12 +2,15 @@ import React from 'react';
 import { Layout } from '../components';
 
 import '../styles/styles.scss';
+import { AppContext } from '../context/appContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />;
-    </Layout>
+    <AppContext>
+      <Layout>
+        <Component {...pageProps} />;
+      </Layout>
+    </AppContext>
   );
 }
 
