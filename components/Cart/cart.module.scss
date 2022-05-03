@@ -19,6 +19,11 @@ $bg-color: white;
     float: right;
     padding: 40px 10px;
     position: relative;
+
+    @media screen and (max-width:800px) {
+        width: 415px;
+        padding: 4px;
+    }
 }
 
 .cartHeading {
@@ -31,6 +36,10 @@ $bg-color: white;
     margin-left: 10px;
     border: none;
     background-color: transparent;
+
+    @media screen and (max-width:800px) {
+        margin-top: 35px;
+    }
 }
 
 .heading {
