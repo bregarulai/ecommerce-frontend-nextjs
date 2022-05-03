@@ -10,6 +10,17 @@ export const AppContext = ({ children }) => {
   const [totalQuatities, setTotalQuatities] = useState(0);
   const [qty, setQty] = useState(1);
 
+  const increaseQuantity = () => {
+    setQty((prevQty) => prevQty + 1);
+  };
+
+  const decreaseQuantity = () => {
+    setQty((prevQty) => {
+      if (prevQty - 1 < 1) return 1;
+      return prevQty - 1;
+    });
+  };
+
   return (
     <Context.Provider
       value={{
@@ -23,6 +34,8 @@ export const AppContext = ({ children }) => {
         setTotalPrice,
         setTotalQuatities,
         setQty,
+        increaseQuantity,
+        decreaseQuantity,
       }}
     >
       {children}
