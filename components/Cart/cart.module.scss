@@ -163,6 +163,10 @@ $colorGreen: rgb(49, 168, 49);
 
 .bottom {
     margin-top: 60px;
+
+    @media screen and (max-width:800px) {
+        margin-top: 30px;
+    }
 }
 
 .quantityDesc {
@@ -188,4 +192,12 @@ $colorGreen: rgb(49, 168, 49);
 
 .plus {
     color: $colorGreen;
+}
+
+.removeItem {
+    font-size: 24px;
+    color: $primary-color;
+    cursor: pointer;
+    background: transparent;
+    border: none;
 }

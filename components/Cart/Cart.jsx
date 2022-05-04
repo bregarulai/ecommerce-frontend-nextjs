@@ -33,6 +33,7 @@ const Cart = () => {
     minus,
     num,
     plus,
+    removeItem,
   } = styles;
   const cartRef = useRef();
   const { totalPrice, totalQuatities, cartItems, setShowCart } =
@@ -91,6 +92,9 @@ const Cart = () => {
                         </span>
                       </p>
                     </div>
+                    <button type='button' className={removeItem} onClick={''}>
+                      <TiDeleteOutline />
+                    </button>
                   </div>
                 </div>
               </div>
