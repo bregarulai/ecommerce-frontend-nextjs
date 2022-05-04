@@ -42,7 +42,7 @@ export const AppContext = ({ children }) => {
     index = cartItems.findIndex((item) => item._id === id);
 
     const newCartItems = cartItems.filter((item) => item._id !== id);
-    // const newCartItems = cartItems.slice(index, 1);
+
     if (value === 'inc') {
       setCartItems([
         ...newCartItems.slice(0, index),
