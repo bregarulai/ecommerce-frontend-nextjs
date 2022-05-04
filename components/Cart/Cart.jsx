@@ -28,6 +28,11 @@ const Cart = () => {
     itemDesc,
     flex,
     top,
+    bottom,
+    quantityDesc,
+    minus,
+    num,
+    plus,
   } = styles;
   const cartRef = useRef();
   const { totalPrice, totalQuatities, cartItems, setShowCart } =
@@ -73,6 +78,19 @@ const Cart = () => {
                   <div className={`${flex} ${top}`}>
                     <h5>{item.name}</h5>
                     <h4>${item.price}</h4>
+                  </div>
+                  <div className={`${flex} ${bottom}`}>
+                    <div>
+                      <p className={quantityDesc}>
+                        <span className={minus} onClick={''}>
+                          <AiOutlineMinus />
+                        </span>
+                        <span className={num}>0</span>
+                        <span className={plus} onClick={''}>
+                          <AiOutlinePlus />
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

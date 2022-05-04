@@ -3,6 +3,8 @@ $bg-color: white;
 $gray-light: #ebebeb;
 $text-color: #324d67;
 $color-black: black;
+$colorGray: gray;
+$colorGreen: rgb(49, 168, 49);
 
 .wrapper {
     width: 100vw;
@@ -157,4 +159,33 @@ $color-black: black;
         flex-wrap: wrap;
         gap: 10px;
     }
+}
+
+.bottom {
+    margin-top: 60px;
+}
+
+.quantityDesc {
+    border: 1px solid $colorGray;
+    padding: 6px;
+
+    span {
+        font-size: 16px;
+        padding: 6px 12px;
+        cursor: pointer;
+    }
+}
+
+.minus {
+    border-right: 1px solid $colorGray;
+    color: $primary-color;
+}
+
+.num {
+    border-right: 1px solid $colorGray;
+    font-size: 20px;
+}
+
+.plus {
+    color: $colorGreen;
 }
