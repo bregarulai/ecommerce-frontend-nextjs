@@ -2,6 +2,7 @@ $primary-color: #f02d34;
 $bg-color: white;
 $gray-light: #ebebeb;
 $text-color: #324d67;
+$color-black: black;
 
 .wrapper {
     width: 100vw;
@@ -133,6 +134,15 @@ $text-color: #324d67;
         @media screen and (max-width:800px) {
             font-size: 16px;
             color: $text-color;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @media screen and (max-width:800px) {
+            font-size: 16px;
+            color: $color-black;
         }
     }
 
