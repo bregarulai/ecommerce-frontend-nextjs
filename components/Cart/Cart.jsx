@@ -25,6 +25,9 @@ const Cart = () => {
     productContainer,
     product,
     productImg,
+    itemDesc,
+    flex,
+    top,
   } = styles;
   const cartRef = useRef();
   const { totalPrice, totalQuatities, cartItems, setShowCart } =
@@ -66,6 +69,11 @@ const Cart = () => {
                   alt={item.name}
                   className={productImg}
                 />
+                <div className={itemDesc}>
+                  <div className={`${flex} ${top}`}>
+                    <h5>{item.name}</h5>
+                  </div>
+                </div>
               </div>
             ))}
         </div>

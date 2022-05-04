@@ -1,6 +1,7 @@
 $primary-color: #f02d34;
 $bg-color: white;
 $gray-light: #ebebeb;
+$text-color: #324d67;
 
 .wrapper {
     width: 100vw;
@@ -115,5 +116,35 @@ $gray-light: #ebebeb;
     @media screen and (max-width:800px) {
         width: 25%;
         height: 25%;
+    }
+}
+
+.itemDesc {}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    color: $text-color;
+
+    h5 {
+        font-size: 24px;
+
+        @media screen and (max-width:800px) {
+            font-size: 16px;
+            color: $text-color;
+        }
+    }
+
+    @media screen and (max-width:800px) {
+        width: 200px;
+    }
+}
+
+.top {
+
+    @media screen and (max-width:800px) {
+        flex-wrap: wrap;
+        gap: 10px;
     }
 }
