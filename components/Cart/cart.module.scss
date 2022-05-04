@@ -226,3 +226,13 @@ $colorGreen: rgb(49, 168, 49);
         }
     }
 }
+
+.btnContainer {
+    width: 400px;
+    margin: auto;
+
+    @media screen and (max-width:800px) {
+        width: 300px;
+        margin: auto;
+    }
+}

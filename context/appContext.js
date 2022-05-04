@@ -10,6 +10,9 @@ export const AppContext = ({ children }) => {
   const [totalQuatities, setTotalQuatities] = useState(0);
   const [qty, setQty] = useState(1);
 
+  let foundProduct;
+  let index;
+
   const increaseQuantity = () => {
     setQty((prevQty) => prevQty + 1);
   };
@@ -19,6 +22,29 @@ export const AppContext = ({ children }) => {
       if (prevQty - 1 < 1) return 1;
       return prevQty - 1;
     });
+  };
+
+  const toggleCartItemQuantity = (id, value) => {
+    foundProduct = cartItems.find((item) => item._id === id);
+    index = cartItems.findIndex((item) => item._id === id);
+
+    if (value === 'inc') {
+      setCartItems([
+        ...cartItems,
+        { ...foundProduct, quantity: foundProduct.quantity + 1 },
+      ]);
+      setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
+      setTotalQuatities((prevTotalQuantities) => prevTotalQuantities + 1);
+    } else if (value === 'dec') {
+      if (foundProduct.quantity > 1) {
+        setCartItems([
+          ...cartItems,
+          { ...foundProduct, quantity: foundProduct.quantity - 1 },
+        ]);
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
+        setTotalQuatities((prevTotalQuantities) => prevTotalQuantities - 1);
+      }
+    }
   };
 
   const onAdd = (product, quantity) => {
@@ -61,6 +87,7 @@ export const AppContext = ({ children }) => {
         increaseQuantity,
         decreaseQuantity,
         onAdd,
+        toggleCartItemQuantity,
       }}
     >
       {children}

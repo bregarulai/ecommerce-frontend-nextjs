@@ -36,10 +36,16 @@ const Cart = () => {
     removeItem,
     cartBottom,
     total,
+    btnContainer,
   } = styles;
   const cartRef = useRef();
-  const { totalPrice, totalQuatities, cartItems, setShowCart } =
-    useAppContext();
+  const {
+    totalPrice,
+    totalQuatities,
+    cartItems,
+    setShowCart,
+    toggleCartItemQuantity,
+  } = useAppContext();
   return (
     <div className={wrapper} ref={cartRef}>
       <div className={container}>
@@ -85,11 +91,21 @@ const Cart = () => {
                   <div className={`${flex} ${bottom}`}>
                     <div>
                       <p className={quantityDesc}>
-                        <span className={minus} onClick={''}>
+                        <span
+                          className={minus}
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, 'dec')
+                          }
+                        >
                           <AiOutlineMinus />
                         </span>
                         <span className={num}>0</span>
-                        <span className={plus} onClick={''}>
+                        <span
+                          className={plus}
+                          onClick={() =>
+                            toggleCartItemQuantity(item._id, 'inc')
+                          }
+                        >
                           <AiOutlinePlus />
                         </span>
                       </p>
@@ -107,6 +123,11 @@ const Cart = () => {
             <div className={total}>
               <h3>Subtotal:</h3>
               <h3>${totalPrice}</h3>
+            </div>
+            <div className={btnContainer}>
+              <button type='button' className={btn} onClick={''}>
+                Pay with Stripe
+              </button>
             </div>
           </div>
         )}
