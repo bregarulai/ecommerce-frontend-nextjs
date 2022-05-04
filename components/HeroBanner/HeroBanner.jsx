@@ -7,6 +7,7 @@ import styles from './heroBanner.module.scss';
 const HeroBanner = ({ bannerInfo }) => {
   const { smallText, midText, buttonText, desc, image, largeText1, product } =
     bannerInfo;
+
   const { container, beatsSolo, imageContainer, description } = styles;
   return (
     <div className={container}>
