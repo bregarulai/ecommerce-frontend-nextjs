@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState } from 'react';
 import {
   AiOutlineMinus,
@@ -5,8 +6,8 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from 'react-icons/ai';
-import { Product } from '../../components';
 
+import { Product } from '../../components';
 import { useAppContext } from '../../context/appContext';
 import { urlFor, client } from '../../lib/client';
 import styles from '../../styles/product.module.scss';
@@ -46,6 +47,9 @@ const ProductDetails = ({ products, product }) => {
 
   return (
     <div>
+      <Head>
+        <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+      </Head>
       <div className={container}>
         <div>
           <div>

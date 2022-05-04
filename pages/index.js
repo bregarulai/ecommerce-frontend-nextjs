@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 
 import { client } from '../lib/client';
 import { HeroBanner, Product, FooterBanner } from '../components';
@@ -9,6 +10,9 @@ const Home = ({ products, bannerData }) => {
 
   return (
     <>
+      <Head>
+        <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+      </Head>
       <HeroBanner bannerInfo={bannerData.length && bannerData[0]} />
       <div className={products__heading}>
         <h2>Best Selling Products</h2>

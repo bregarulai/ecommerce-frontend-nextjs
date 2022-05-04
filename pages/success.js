@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { BsBagCheckFill } from 'react-icons/bs';
+import Head from 'next/head';
 
 import { runFireWorks } from '../lib/utils';
 import { useAppContext } from '../context/appContext';
@@ -21,6 +22,9 @@ const Success = () => {
 
   return (
     <div className={successWrapper}>
+      <Head>
+        <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+      </Head>
       <div className={success}>
         <p className={icon}>
           <BsBagCheckFill />
