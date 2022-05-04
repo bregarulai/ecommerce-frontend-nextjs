@@ -3,6 +3,7 @@ $bgSecondary: #dcdcdc;
 $iconColor: green;
 $titleColor: #324d67;
 $emailColor: #f02d34;
+$primary-color: #f02d34;
 
 .successWrapper {
     background-color: $bgPrimary;
@@ -67,4 +68,25 @@ $emailColor: #f02d34;
 .email {
     margin-left: 5px;
     color: $emailColor;
+}
+
+.btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 12px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-top: 40px;
+    text-transform: uppercase;
+    background-color: $primary-color;
+    color: $bgPrimary;
+    cursor: pointer;
+    transform: scale(1, 1);
+    transition: transform 0.5s ease;
+
+    &:hover {
+        transform: scale(1.1, 1.1);
+    }
 }

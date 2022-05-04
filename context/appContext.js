@@ -7,7 +7,7 @@ export const AppContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [totalQuatities, setTotalQuatities] = useState(0);
+  const [totalQuatities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
 
   let foundProduct;
@@ -31,7 +31,7 @@ export const AppContext = ({ children }) => {
       (prevTotalPrice) =>
         prevTotalPrice - foundProduct.price * foundProduct.quantity
     );
-    setTotalQuatities(
+    setTotalQuantities(
       (prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity
     );
     setCartItems(newCartItems);
@@ -50,7 +50,7 @@ export const AppContext = ({ children }) => {
         ...newCartItems.slice(index),
       ]);
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
-      setTotalQuatities((prevTotalQuantities) => prevTotalQuantities + 1);
+      setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1);
     } else if (value === 'dec') {
       if (foundProduct.quantity > 1) {
         setCartItems([
@@ -59,7 +59,7 @@ export const AppContext = ({ children }) => {
           ...newCartItems.slice(index),
         ]);
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
-        setTotalQuatities((prevTotalQuantities) => prevTotalQuantities - 1);
+        setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1);
       }
     }
   };
@@ -71,7 +71,7 @@ export const AppContext = ({ children }) => {
     setTotalPrice(
       (prevTotalPrice) => prevTotalPrice + product.price * quantity
     );
-    setTotalQuatities((prevTotalQuantity) => prevTotalQuantity + quantity);
+    setTotalQuantities((prevTotalQuantity) => prevTotalQuantity + quantity);
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((item) => {
         if (item.__id === product._id)
@@ -99,7 +99,7 @@ export const AppContext = ({ children }) => {
         setShowCart,
         setCartItems,
         setTotalPrice,
-        setTotalQuatities,
+        setTotalQuantities,
         setQty,
         increaseQuantity,
         decreaseQuantity,

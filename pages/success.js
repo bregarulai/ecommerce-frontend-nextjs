@@ -6,9 +6,16 @@ import { useAppContext } from '../context/appContext';
 import styles from '../styles/success.module.scss';
 
 const Success = () => {
-  const { successWrapper, success, icon, emailMsg, description, email } =
+  const { successWrapper, success, icon, emailMsg, description, email, btn } =
     styles;
   const { setCartItems, setTotalPrice, setTotalQuantities } = useAppContext();
+
+  useEffect(() => {
+    localStorage.clear();
+    setCartItems([]);
+    setTotalPrice(0);
+    setTotalQuantities(0);
+  }, []);
 
   return (
     <div className={successWrapper}>
@@ -24,6 +31,11 @@ const Success = () => {
             order@example.com
           </a>
         </p>
+        <Link href='/'>
+          <button type='button' className={btn} width='300px'>
+            Continue Shopping
+          </button>
+        </Link>
       </div>
     </div>
   );
