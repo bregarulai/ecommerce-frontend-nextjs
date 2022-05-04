@@ -28,18 +28,22 @@ export const AppContext = ({ children }) => {
     foundProduct = cartItems.find((item) => item._id === id);
     index = cartItems.findIndex((item) => item._id === id);
 
+    const newCartItems = cartItems.filter((item) => item._id !== id);
+    // const newCartItems = cartItems.slice(index, 1);
     if (value === 'inc') {
       setCartItems([
-        ...cartItems,
+        ...newCartItems.slice(0, index),
         { ...foundProduct, quantity: foundProduct.quantity + 1 },
+        ...newCartItems.slice(index),
       ]);
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
       setTotalQuatities((prevTotalQuantities) => prevTotalQuantities + 1);
     } else if (value === 'dec') {
       if (foundProduct.quantity > 1) {
         setCartItems([
-          ...cartItems,
+          ...newCartItems.slice(0, index),
           { ...foundProduct, quantity: foundProduct.quantity - 1 },
+          ...newCartItems.slice(index),
         ]);
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
         setTotalQuatities((prevTotalQuantities) => prevTotalQuantities - 1);

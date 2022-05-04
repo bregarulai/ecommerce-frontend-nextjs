@@ -99,7 +99,7 @@ const Cart = () => {
                         >
                           <AiOutlineMinus />
                         </span>
-                        <span className={num}>0</span>
+                        <span className={num}>{item.quantity}</span>
                         <span
                           className={plus}
                           onClick={() =>
