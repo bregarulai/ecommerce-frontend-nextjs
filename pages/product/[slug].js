@@ -36,7 +36,14 @@ const ProductDetails = ({ products, product }) => {
     selectedImage,
   } = styles;
   const [index, setIndex] = useState(0);
-  const { decreaseQuantity, increaseQuantity, qty, onAdd } = useAppContext();
+  const { decreaseQuantity, increaseQuantity, qty, onAdd, setShowCart } =
+    useAppContext();
+
+  const handleBuyNow = () => {
+    onAdd(product, qty);
+    setShowCart(true);
+  };
+
   return (
     <div>
       <div className={container}>
@@ -98,7 +105,7 @@ const ProductDetails = ({ products, product }) => {
             >
               Add to Cart
             </button>
-            <button type='button' className={buyNowBtn} onClick=''>
+            <button type='button' className={buyNowBtn} onClick={handleBuyNow}>
               Buy Now
             </button>
           </div>
