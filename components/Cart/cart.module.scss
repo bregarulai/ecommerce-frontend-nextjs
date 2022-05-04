@@ -201,3 +201,28 @@ $colorGreen: rgb(49, 168, 49);
     background: transparent;
     border: none;
 }
+
+.cartBottom {
+    position: absolute;
+    bottom: 12px;
+    right: 5px;
+    width: 100%;
+    padding: 30px 65px;
+
+    @media screen and (max-width:800px) {
+        padding: 30px;
+    }
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+        font-size: 22px;
+
+        @media screen and (max-width:800px) {
+            font-size: 20px;
+        }
+    }
+}
