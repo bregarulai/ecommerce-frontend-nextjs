@@ -1,0 +1,37 @@
+$bgPrimary: white;
+$bgSecondary: #dcdcdc;
+$iconColor: green;
+
+.successWrapper {
+    background-color: $bgPrimary;
+    min-height: 60vh;
+
+    @media screen and (max-width:800px) {
+        min-height: 69vh;
+    }
+}
+
+.success {
+    width: 1000px;
+    margin: auto;
+    margin-top: 160px;
+    background-color: $bgSecondary;
+    padding: 50px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media screen and (max-width:800px) {
+        width: 370px;
+        margin-top: 100px;
+        padding: 20px;
+        height: 350px;
+    }
+}
+
+.icon {
+    color: $iconColor;
+    font-size: 40px;
+}
